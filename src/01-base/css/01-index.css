@@ -1,0 +1,11 @@
+.active{
+    background-color: skyblue;
+}
+
+#myapp{
+    background-color: pink;
+}
+
+.hidden{
+    display: none;
+}
