@@ -20,14 +20,13 @@ import ReactDOM from 'react-dom';
 // import App from './01-base/15-betterScrollCinema'
 // import App from './01-base/16-props'
 // import App from './01-base/17-props函数式组件'
-import App from './01-base/18-状态vs属性'
-
-
-
-
-
-
-
+// import App from './01-base/18-状态vs属性'
+// import App from './01-base/19-非受控'
+// import App from './01-base/20-受控组件'
+// import App from './01-base/21-受控cinema'
+// import App from './01-base/22-受控todoList'
+// import App from './02-advanced/01-字传父'
+import App from './02-advanced/02-非受控卖座选项卡'
 
 
 // class App extends React.Component {
