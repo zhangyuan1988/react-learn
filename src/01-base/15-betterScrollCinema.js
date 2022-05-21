@@ -5,19 +5,25 @@ import './css/02-maizuo.css'
 
 export default class Cinema extends Component {
 
-    // constructor() {
-    //   super()
-    //   axios({
-    //     url: 'https://m.maizuo.com/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=7330731',
-    //     method: 'GET',
-    //     headers: {
-    //       'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.2.0","e":"164864080277695958384641","bc":"110100"}',
-    //       'X-Host': 'mall.film-ticket.film.list'
-    //     }
-    //   }).then((res) => {
-    //     console.log(res);
-    //   })
-    // }
+    constructor() {
+      super()
+      axios({
+        url: 'https://m.maizuo.com/gateway?cityId=110100&pageNum=1&pageSize=10&type=1&k=7330731',
+        method: 'GET',
+        headers: {
+          'X-Client-Info': '{"a":"3000","ch":"1002","v":"5.2.0","e":"164864080277695958384641","bc":"110100"}',
+          'X-Host': 'mall.film-ticket.film.list'
+        }
+      }).then((res) => {
+        console.log(res);
+        // this.setState({
+        //     cinemaList: res.data.data.cinemas,
+        //     // 备份一份数剧
+        //     backCinemaList: res.data.data.cinemas,
+        //     count: 2
+        // })
+      })
+    }
 
     state = {
         cinemaList: [],
