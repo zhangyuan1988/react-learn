@@ -11,6 +11,8 @@ import Center from '../views/Center'
 import NotFound from '../views/NotFound'
 import Detail from '../views/Detail'
 import Login from '../views/Login'
+import City from '../views/City'
+import Search from '../views/Search'
 // 路由组件
 
 function isAuth() {
@@ -28,7 +30,8 @@ export default class App extends Component {
                         {/* 匹配路径 加载对应组件 */}
                         {/* 嵌套路由不能使用精确匹配 */}
                         <Route path='/films' component={Films} />
-                        <Route path='/cinemas' component={Cinemas} />
+                        <Route exact path='/cinemas' component={Cinemas} />
+                        <Route path='/cinemas/search' component={Search} />
 
                         {/* <Route path='/center' component={Center} /> */}
                         {/* 路由守卫 */}
@@ -49,6 +52,7 @@ export default class App extends Component {
                         {/* 普通路由传参 */}
                         <Route path='/detail' component={Detail} />
 
+                        <Route path='/city' component={City} />
 
 
                         {/* 路由重定向 */}
