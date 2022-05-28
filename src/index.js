@@ -87,14 +87,20 @@ import App from './06-react-redux/App'
 
 // 引入react-redux
 import { Provider } from 'react-redux'
-import store from './06-react-redux/redux/store'
+
+import { store, persistor } from './06-react-redux/redux/store'
+
+// 引入持久化工具
+import { PersistGate } from 'redux-persist/integration/react'
 
 ReactDOM.render(
     // 打开严格模式
     // <React.StrictMode>
     // 接收store
     <Provider store={store}>
-        <App />
+        <PersistGate loading={null} persistor={persistor}>
+            <App />
+        </PersistGate>
     </Provider>
     // </React.StrictMode>
     ,

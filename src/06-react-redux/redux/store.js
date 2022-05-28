@@ -1,6 +1,11 @@
 // 1.引入redux
 // 2.createStore(reducer)
-import { applyMiddleware, combineReducers, createStore ,compose} from 'redux'
+import { applyMiddleware, combineReducers, createStore, compose } from 'redux'
+
+// 持久化工具
+import { persistStore, persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
+
 import CityReducer from './redusers/CityReducer'
 import TabbarReducer from './redusers/TabbarReducer'
 import CinemaListReducer from './redusers/CinemaListReducer'
@@ -38,6 +43,13 @@ import reduxPromise from 'redux-promise'
 //     }
 // }
 
+const persistConfig = {
+    key: "fuzi",
+    storage,
+    // 只持久化的reducer
+    whitelist: ['CityReducer']
+}
+
 // 合并reducer
 // 此时会有命名空间
 const reducer = combineReducers({
@@ -46,15 +58,19 @@ const reducer = combineReducers({
     CinemaListReducer
 })
 
+// 持久化后的
+const persistedReducer = persistReducer(persistConfig, reducer)
+
 // 第二个参数也支持写 默认的参数
 // 第二个参数可以是中间件
 // 同步状态下不受影响 ，异步状态下 会返回一个函数去执行
 
 // 可以使用多个中间件
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(reducer, /* preloadedState, */ composeEnhancers(applyMiddleware(reduxThunk, reduxPromise)))
+const store = createStore(persistedReducer, /* preloadedState, */ composeEnhancers(applyMiddleware(reduxThunk, reduxPromise)))
 // const store = createStore(reducer, applyMiddleware(reduxThunk, reduxPromise))
 
+let persistor = persistStore(store)
 
 /**
  * store.dispatch
@@ -95,7 +111,7 @@ const store = createStore(reducer, /* preloadedState, */ composeEnhancers(applyM
 // }
 
 
-export default store
+export { store, persistor }
 
 
 /**
