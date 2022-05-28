@@ -71,7 +71,8 @@ import ReactDOM from 'react-dom';
 // import App from './03-hooks/15-useReducer3'
 // import App from './03-hooks/16-自定义hooks'
 // import App from './04-router/App'
-import App from './05-redux/App'
+// import App from './05-redux/App'
+import App from './06-react-redux/App'
 
 
 // class App extends React.Component {
@@ -84,11 +85,17 @@ import App from './05-redux/App'
 //   }
 // }
 
+// 引入react-redux
+import { Provider } from 'react-redux'
+import store from './06-react-redux/redux/store'
 
 ReactDOM.render(
     // 打开严格模式
     // <React.StrictMode>
+    // 接收store
+    <Provider store={store}>
         <App />
+    </Provider>
     // </React.StrictMode>
     ,
     document.getElementById('root')
