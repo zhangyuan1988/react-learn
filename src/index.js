@@ -2,6 +2,8 @@
 // 17之后可以不引入
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
+
 // import './01-base/01-class-component'
 
 
@@ -72,7 +74,17 @@ import ReactDOM from 'react-dom';
 // import App from './03-hooks/16-自定义hooks'
 // import App from './04-router/App'
 // import App from './05-redux/App'
-import App from './06-react-redux/App'
+// import App from './06-react-redux/App'
+// import App from './07-antd/01-antd引入'
+// import App from './07-antd/02-栅格'
+// import App from './07-antd/03-layout'
+// import App from './07-antd/04-下拉菜单'
+// import App from './07-antd/05-步骤条'
+// import App from './07-antd/06-轮播'
+// import App from './07-antd/07-table'
+// import App from './07-antd/08-树形控件'
+// import App from './07-antd/09-Modal'
+import App from './07-antd/08-App'
 
 
 // class App extends React.Component {
@@ -103,6 +115,8 @@ ReactDOM.render(
         </PersistGate>
     </Provider>
     // </React.StrictMode>
+
+    // <App/>
     ,
     document.getElementById('root')
 )
