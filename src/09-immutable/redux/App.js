@@ -7,14 +7,14 @@ import store from './redux/store'
 export default class App extends Component {
 
   state = {
-    show: store.getState().TabbarReducer.show
+    show: store.getState().TabbarReducer.get('show')
   }
 
   // store.subscribe 订阅
   componentDidMount() {
     store.subscribe(() => {
       console.log('app 中订阅');
-      const { show } = store.getState().TabbarReducer
+      const show = store.getState().TabbarReducer.get('show')
       this.setState({ show })
       // 通过方法获取内部参数
       console.log(store.getState().TabbarReducer);

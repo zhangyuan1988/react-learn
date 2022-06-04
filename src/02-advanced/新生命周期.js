@@ -12,7 +12,7 @@ export default class App extends Component {
         return {}
     }
 
-    // 代替componentWillUpdate 更新阶段
+    // 可以代替componentWillUpdate 更新阶段
     // render之后 dom渲染之前 didUpdate之前执行
     getSnapshotBeforeUpdate(prevProps, prevState) {
 
