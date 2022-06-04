@@ -84,7 +84,7 @@ import ReactDOM from 'react-dom';
 // import App from './07-antd/07-table'
 // import App from './07-antd/08-树形控件'
 // import App from './07-antd/09-Modal'
-import App from './07-antd/08-App'
+import App from './08-antd-mobile/App'
 
 
 // class App extends React.Component {
@@ -100,7 +100,7 @@ import App from './07-antd/08-App'
 // 引入react-redux
 import { Provider } from 'react-redux'
 
-import { store, persistor } from './06-react-redux/redux/store'
+import { store, persistor } from './08-antd-mobile/redux/store'
 
 // 引入持久化工具
 import { PersistGate } from 'redux-persist/integration/react'

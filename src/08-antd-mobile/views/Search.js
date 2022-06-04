@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react'
 import { store } from '../redux/store';
+import { SearchBar } from 'antd-mobile'
 import getCinemaListAction from '../redux/actionCreator/getCinemaListAction'
 
 export default function Search() {
@@ -41,12 +42,17 @@ export default function Search() {
     return (
         <div>
 
-            <div>
-                <input type="text" value={mytext} onChange={
+            <div style={{ padding: '10px' }}>
+                {/* <input type="text" value={mytext} onChange={
                     (event) => {
                         setmytext(event.target.value)
                     }
-                }></input>
+                }></input> */}
+                <SearchBar alue={mytext} onChange={
+                    (event) => {
+                        // console.log(event);
+                        setmytext(event)
+                    }} placeholder='请输入内容' showCancelButton={() => true} />
             </div>
 
             {getCinemaList.map((item) =>

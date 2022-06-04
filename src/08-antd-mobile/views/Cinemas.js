@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { NavBar, Space, Toast } from 'antd-mobile'
+import { SearchOutline, MoreOutline, CloseOutline } from 'antd-mobile-icons'
 import store from '../redux/store'
 import { connect } from 'react-redux';
 import getCinemaListAction from '../redux/actionCreator/getCinemaListAction'
@@ -24,7 +26,7 @@ function Cinemas(props) {
 
   return (
     <div>
-      <div style={{ overflow: 'hidden' }}>
+      {/* <div style={{ overflow: 'hidden' }}>
         <div style={{ float: 'left' }} onClick={() => {
           props.history.push('/city')
         }}>
@@ -37,7 +39,14 @@ function Cinemas(props) {
         }}>
           搜索
         </div>
-      </div>
+      </div> */}
+      <NavBar right={<SearchOutline onClick={() => {
+        props.history.push('/cinemas/search')
+      }} />} back={null} left={<div onClick={() => {
+        props.history.push('/city')
+      }}>{props.cityName}</div>}>
+        影院
+      </NavBar>
       {props.list.map((item) =>
         <dl key={item.cinemaId} style={{ padding: '10px' }}>
           <dt>

@@ -1,24 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { withRouter } from 'react-router-dom'
 import { NavLink } from 'react-router-dom'
+import { Badge, TabBar } from 'antd-mobile'
+import {
+    AppOutline,
+    MessageOutline,
+    MessageFill,
+    UnorderedListOutline,
+    UserOutline,
+} from 'antd-mobile-icons'
 import style from './Tabbar.module.css'
 
-export default function Tabbar() {
-    return (
-            <ul className={style.tabbar}>
-                <li className={style.item}>
-                    {/* 声明式导航 */}
-                    {/* 默认会有active类名  也可以用activeClassName重命名选中的属性名 */}
-                    <NavLink to="/films" activeClassName="active">电影</NavLink>
+function TabbarApp(props) {
+    const tabs = [
+        {
+            key: '/films',
+            title: '电影',
+            icon: <AppOutline />,
+            badge: Badge.dot,
+        },
+        {
+            key: '/cinemas',
+            title: '影院',
+            icon: <UnorderedListOutline />,
+            badge: '5',
+        },
+        {
+            key: '/center',
+            title: '我的',
+            icon: <UserOutline />,
+        },
+    ]
 
-                </li>
-                <li className={style.item}>
-                    <NavLink to="/cinemas" activeClassName="active">电影</NavLink>
-                    影院
-                </li>
-                <li className={style.item}>
-                    <NavLink to="/center" activeClassName="active">我的</NavLink>
-                    我的
-                </li>
-            </ul>
+    const [activeKey, setActiveKey] = useState('todo')
+    return (
+        <div className={style.tabbar}>
+            <TabBar activeKey={`/${props.location.pathname.split('/')[1]}`} safeArea onChange={(e) => {
+                console.log(props);
+                props.history.push(e)
+            }}>
+                {tabs.map(item => (
+                    <TabBar.Item
+                        key={item.key}
+                        icon={item.icon}
+                        title={item.title}
+                        badge={item.badge}
+                    />
+                ))}
+            </TabBar>
+        </div>
     )
 }
+
+export default withRouter(TabbarApp)
