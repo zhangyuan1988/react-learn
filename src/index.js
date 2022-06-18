@@ -87,7 +87,9 @@ import './utils/request'
 // import App from './07-antd/09-Modal'
 // import App from './08-antd-mobile/App'
 // import App from './11-stype-components/App'
-import App from './12-单元测试/App'
+// import App from './12-单元测试/App'
+// import App from './13-redux-saga/App'
+import App from './13-redux-saga/maizuo/App'
 
 
 // class App extends React.Component {
