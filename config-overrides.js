@@ -1,3 +1,5 @@
+// 支持装饰器语法
+
 const path = require('path')
 const { override, addDecoratorsLegacy } = require('customize-cra')
 function resolve(dir) {

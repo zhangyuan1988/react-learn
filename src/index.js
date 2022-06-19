@@ -89,7 +89,12 @@ import './utils/request'
 // import App from './11-stype-components/App'
 // import App from './12-单元测试/App'
 // import App from './13-redux-saga/App'
-import App from './13-redux-saga/maizuo/App'
+// import App from './13-redux-saga/maizuo/App'
+// import App from './14-react-补充/portal/App'
+// import App from './14-react-补充/懒加载/App'
+// import App from './14-react-补充/forwardRef/App'
+// import App from './14-react-补充/forwardRef/App_forwardRef'
+import App from './14-react-补充/memo/App'
 
 
 // class App extends React.Component {
