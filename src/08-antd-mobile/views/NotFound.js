@@ -14,7 +14,7 @@ function NotFound(props) {
 }
 
 
-// 高阶组件接收一个函数
+// 高阶组件原理接收一个函数
 // 第二个参数是一个对象，对象中就是action
 function fuziconnext(cb, obj) {
 
@@ -36,7 +36,7 @@ function fuziconnext(cb, obj) {
   }
 }
 
-
+// 返回函数  函数再传递组件进行执行
 export default fuziconnext(() => {
   return {
     a: 1,

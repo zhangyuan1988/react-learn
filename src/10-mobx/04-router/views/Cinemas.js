@@ -31,7 +31,7 @@ export default function Cinemas(props) {
 
   return (
     <div>
-      {/* 函数式写法 提供一个Observer帮助观察store中值的变化 */}
+      {/* 函数式写法 提供一个Observer帮助观察store中值的变化 此时就不再需要订阅和取消订阅了*/}
       <Observer>
         {
           () => {
