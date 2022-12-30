@@ -1,15 +1,14 @@
 // console.log('hello');
 // 17之后可以不引入
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './utils/request'
+import React from "react";
+import ReactDOM from "react-dom";
+import "./utils/request";
 // import 'antd/dist/antd.css'; // or 'antd/dist/antd.less'
 
 // import './01-base/01-class-component'
 
-
 // eslint-disable-next-line no-unused-vars
-// import App from './01-base/01-class-component'
+// import App from "./01-base/01-class-component";
 // import AppFunctional from './01-base/02-fun-component'
 // import App from './01-base/03-组件嵌套'
 // import App from './01-base/04-组件样式'
@@ -28,19 +27,19 @@ import './utils/request'
 // import App from './01-base/20-受控组件'
 // import App from './01-base/21-受控cinema'
 // import App from './01-base/22-受控todoList'
-// import App from './02-advanced/01-字传父'
-// import App from './02-advanced/02-非受控卖座选项卡'
-// import App from './02-advanced/03-受控组件'
+// import App from "./02-advanced/01-字传父";
+// import App from "./02-advanced/02-非受控卖座选项卡";
+// import App from "./02-advanced/03-受控组件";
 // import App from './02-advanced/04-父子通信表单域'
 // import App from './02-advanced/05-ref表单域'
 // import App from './02-advanced/06-中间人状态提升'
 // import App from './02-advanced/07-发布订阅模式'
-// import App from './02-advanced/08-发布阅案例'
-// import App from './02-advanced/09-context'
-// import App from './02-advanced/10-插槽'
-// import App from './02-advanced/11-插槽抽屉'
+// import App from "./02-advanced/08-发布阅案例";
+// import App from "./02-advanced/09-context";
+// import App from "./02-advanced/10-插槽";
+// import App from "./02-advanced/11-插槽抽屉";
 // import App from './02-advanced/12-初始化生命周期'
-// import App from './02-advanced/13-初始化案例'
+import App from "./02-advanced/13-初始化案例";
 // import App from './02-advanced/14-更新阶段生命周期1'
 // import App from './02-advanced/15-更新阶段生命周期2'
 // import App from './02-advanced/16-更新阶段案例'
@@ -94,8 +93,7 @@ import './utils/request'
 // import App from './14-react-补充/懒加载/App'
 // import App from './14-react-补充/forwardRef/App'
 // import App from './14-react-补充/forwardRef/App_forwardRef'
-import App from './14-react-补充/memo/App'
-
+// import App from "./14-react-补充/memo/App";
 
 // class App extends React.Component {
 //   render() {
@@ -108,25 +106,24 @@ import App from './14-react-补充/memo/App'
 // }
 
 // 引入react-redux
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 
-import { store, persistor } from './08-antd-mobile/redux/store'
+import { store, persistor } from "./08-antd-mobile/redux/store";
 
 // 引入持久化工具
-import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from "redux-persist/integration/react";
 
 ReactDOM.render(
-    // 打开严格模式
-    // <React.StrictMode>
-    // 接收store
-    <Provider store={store}>
-        <PersistGate loading={null} persistor={persistor}>
-            <App />
-        </PersistGate>
-    </Provider>
-    // </React.StrictMode>
+  // 打开严格模式
+  // <React.StrictMode>
+  // 接收store
+  <Provider store={store}>
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
+  </Provider>,
+  // </React.StrictMode>
 
-    // <App/>
-    ,
-    document.getElementById('root')
-)
+  // <App/>
+  document.getElementById("root")
+);
